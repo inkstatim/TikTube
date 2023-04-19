@@ -1,0 +1,17 @@
+{% extends 'TikDownloader/base.html' %}
+
+{% block title %}
+TikTok Video Downloader
+{% endblock %}
+
+{% block content %}
+<h1>TikTok Video Downloader</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="nickname">Enter TikTok username:</label>
+    <input type="text" id="nickname" name="nickname" required>
+    <br><br>
+    <button type="submit">Download</button>
+</form>
+{% endblock %}
