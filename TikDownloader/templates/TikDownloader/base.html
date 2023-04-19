@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+{#                <li><a href="{% url 'home' %}">Home</a></li>#}
+{#                <li><a href="{% url 'about' %}">About</a></li>#}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023 - TikTube</p>
+    </footer>
+</body>
+</html>
