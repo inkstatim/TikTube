@@ -86,11 +86,14 @@ class TikTokDownloadView(View):
         soup = BeautifulSoup(driver.page_source, "html.parser")
         videos = soup.find_all("div", {"class": "tiktok-yz6ijl-DivWrapper"})
 
-        for index, video in enumerate(videos):
+        num_videos = len(videos)  # добавляем это
+        context = {"num_videos": num_videos}  # добавляем это
+
+        for index, video in enumerate(videos, start=1):
             print(f"Скачивается видео: {index}")
             url = video.a["href"]
 
             get_download_video(url, index)
             time.sleep(10)
 
-        return render(request, self.template_name)
+        return render(request, self.template_name, context=context)
